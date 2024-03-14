@@ -1,0 +1,44 @@
+.carousel-thumbnails {
+  border: 1px solid red;
+  position: relative;
+  --slide-aspect-ratio: 3 / 2;
+  width: 100%;
+}
+
+.thumbnails {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+
+.thumbnails__scroller {
+  overflow: hidden;
+
+  background-color: red;
+  display: flex;
+  gap: var(--sl-spacing-small);
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  scroll-padding: var(--sl-spacing-small);
+}
+
+.thumbnails__scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.thumbnails__image {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+
+  opacity: 0.3;
+  will-change: opacity;
+  transition: 250ms opacity;
+
+  cursor: pointer;
+}
+
+.thumbnails__image.active {
+  opacity: 1;
+}
